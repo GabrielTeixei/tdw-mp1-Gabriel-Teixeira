@@ -17,7 +17,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
   ],
   settings: {
     react: {
@@ -29,6 +29,9 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-require-imports": "off",
     "@typescript-eslint/triple-slash-reference": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "EXAMPLE_PATH" }]
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { varsIgnorePattern: "EXAMPLE_PATH" },
+    ],
   },
 };
