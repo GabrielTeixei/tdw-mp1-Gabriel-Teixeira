@@ -1,3 +1,18 @@
+# Status
+
+[![CI/CD Pipeline](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml)
+
+## Formatação de Código
+
+Para manter o código limpo e consistente, usamos **Prettier**.  
+Para formatar automaticamente todos os arquivos do projeto, execute:
+
+```bash
+npm run prettier
+```
+
+
+
 # A statically generated blog example using Next.js and Contentful
 
 This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Contentful](https://www.contentful.com/) as the data source.
