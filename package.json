@@ -11,7 +11,8 @@
     "test": "jest",
     "type": "module",
     "format": "prettier --write .",
-    "lint": "node --loader ts-node/esm ./node_modules/.bin/eslint ."
+    "prettier": "prettier --write .",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.1",
@@ -35,6 +36,8 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/parser": "^8.46.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.4",
     "eslint-config-prettier": "^10.1.8",
