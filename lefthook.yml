@@ -1,5 +1,15 @@
 pre-commit:
   parallel: true
   commands:
-    say-hello:
-      run: echo "Lefthook test 1!"
+    lint:
+      run: npm run lint
+    format:
+      run: npm run format
+    test:
+      run: npm test
+
+pre-push:
+  parallel: true
+  commands:
+    build:
+      run: npm run build
