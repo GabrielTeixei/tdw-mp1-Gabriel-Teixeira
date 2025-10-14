@@ -25,6 +25,7 @@ export default async function PostPage({
   const { slug } = await params;
   const { isEnabled } = await draftMode();
   const { post, morePosts } = await getPostAndMorePosts(slug, isEnabled);
+  console.log("Cover Image URL:", post.coverImage?.url);
 
   return (
     <div className="container mx-auto px-5">
@@ -40,16 +41,25 @@ export default async function PostPage({
         </h1>
         <div className="hidden md:mb-12 md:block">
           {post.author && (
-            <Avatar name={post.author.name} picture={post.author.picture} />
+            <Avatar
+              name={post.author.name}
+              picture={post.author.picture?.url || "/default-avatar.jpg"}
+            />
           )}
         </div>
         <div className="mb-8 sm:mx-0 md:mb-16">
-          <CoverImage title={post.title} url={post.coverImage.url} />
+          <CoverImage
+            title={post.title}
+            url={post.coverImage?.url || "/default.jpg"}
+          />
         </div>
         <div className="mx-auto max-w-2xl">
           <div className="mb-6 block md:hidden">
             {post.author && (
-              <Avatar name={post.author.name} picture={post.author.picture} />
+              <Avatar
+                name={post.author.name}
+                picture={post.author.picture?.url || "/default-avatar.jpg"}
+              />
             )}
           </div>
           <div className="mb-6 text-lg">
@@ -59,7 +69,7 @@ export default async function PostPage({
 
         <div className="mx-auto max-w-2xl">
           <div className="prose">
-            <Markdown content={post.content} />
+            <Markdown content={post.content || {}} />
           </div>
         </div>
       </article>
