@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
+  output: "export",
   images: {
-    loader: "custom",
-    formats: ["image/avif", "image/webp"],
-  },
+    unoptimized: true
+  }
 };
+
+module.exports = nextConfig;
