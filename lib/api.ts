@@ -44,7 +44,6 @@ function extractPost(fetchResponse: any): any {
 
 function extractPostEntries(fetchResponse: any): any[] {
   if (!fetchResponse?.data?.postCollection?.items) {
-    console.error("Failed to fetch posts from Contentful:", fetchResponse);
     return [];
   }
   return fetchResponse.data.postCollection.items;
