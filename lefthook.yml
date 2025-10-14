@@ -1,0 +1,5 @@
+pre-commit:
+  parallel: true
+  commands:
+    say-hello:
+      run: echo "Lefthook test 1!"
