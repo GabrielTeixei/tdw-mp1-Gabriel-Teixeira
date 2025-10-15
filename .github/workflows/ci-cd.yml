@@ -100,4 +100,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
+        run: npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir=.next
