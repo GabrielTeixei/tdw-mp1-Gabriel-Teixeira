@@ -2,6 +2,8 @@
 
 [![CI/CD Pipeline](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e39a2055-a018-4963-a4ba-d4402eb1fd7e/deploy-status)](https://app.netlify.com/projects/tdw-mp1-gabriel-teixeira/deploys)
+
 ## Formatação de Código
 
 Para manter o código limpo e consistente, usamos **Prettier**.  
