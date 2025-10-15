@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { draftMode } from "next/headers";
+import Link from 'next/link';
+import { draftMode } from 'next/headers';
 
-import MoreStories from "../../more-stories";
-import Avatar from "../../avatar";
-import Date from "../../date";
-import CoverImage from "../../cover-image";
+import MoreStories from '../../more-stories';
+import Avatar from '../../avatar';
+import Date from '../../date';
+import CoverImage from '../../cover-image';
 
-import { Markdown } from "@/lib/markdown";
-import { getAllPosts, getPostAndMorePosts } from "@/lib/api";
+import { Markdown } from '@/lib/markdown';
+import { getAllPosts, getPostAndMorePosts } from '@/lib/api';
 
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false);
@@ -26,6 +26,17 @@ export default async function PostPage({
   const { isEnabled } = await draftMode();
   const { post, morePosts } = await getPostAndMorePosts(slug, isEnabled);
 
+  if (!post) {
+    return (
+      <div className="container mx-auto px-5 py-20 text-center">
+        <h1 className="text-4xl font-bold mb-4">Post not found</h1>
+        <Link href="/" className="text-blue-600 hover:underline">
+          ← Back to Blog
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-5">
       <h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
@@ -34,37 +45,56 @@ export default async function PostPage({
         </Link>
         .
       </h2>
+
       <article>
         <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
-          {post.title}
+          {post.title || 'Untitled'}
         </h1>
+
         <div className="hidden md:mb-12 md:block">
-          {post.author && (
+          {post.author ? (
             <Avatar name={post.author.name} picture={post.author.picture} />
+          ) : (
+            <p className="italic">Author unknown</p>
           )}
         </div>
-        <div className="mb-8 sm:mx-0 md:mb-16">
-          <CoverImage title={post.title} url={post.coverImage.url} />
-        </div>
+
+        {post.coverImage?.url && (
+          <div className="mb-8 sm:mx-0 md:mb-16">
+            <CoverImage title={post.title} url={post.coverImage.url} />
+          </div>
+        )}
+
         <div className="mx-auto max-w-2xl">
           <div className="mb-6 block md:hidden">
-            {post.author && (
+            {post.author ? (
               <Avatar name={post.author.name} picture={post.author.picture} />
+            ) : (
+              <p className="italic">Author unknown</p>
             )}
           </div>
-          <div className="mb-6 text-lg">
-            <Date dateString={post.date} />
-          </div>
+
+          {post.date && (
+            <div className="mb-6 text-lg">
+              <Date dateString={post.date} />
+            </div>
+          )}
         </div>
 
         <div className="mx-auto max-w-2xl">
           <div className="prose">
-            <Markdown content={post.content} />
+            {post.content ? (
+              <Markdown content={post.content} />
+            ) : (
+              <p className="italic">No content available.</p>
+            )}
           </div>
         </div>
       </article>
+
       <hr className="border-accent-2 mt-28 mb-24" />
-      <MoreStories morePosts={morePosts} />
+
+      {morePosts && morePosts.length > 0 && <MoreStories morePosts={morePosts} />}
     </div>
   );
 }
