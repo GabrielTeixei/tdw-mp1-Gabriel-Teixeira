@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "prettier": "prettier --write .",
     "lint": "eslint .",
-    "export": "next export"
+    "export": "next export",
+    "event_type": "contentful-update"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.1",
