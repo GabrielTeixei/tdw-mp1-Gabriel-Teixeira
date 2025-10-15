@@ -16,6 +16,7 @@ export async function generateStaticParams() {
     slug: post.slug,
   }));
 }
+
 export default async function PostPage({
   params,
 }: {
@@ -24,10 +25,6 @@ export default async function PostPage({
   const { slug } = await params;
   const { isEnabled } = await draftMode();
   const { post, morePosts } = await getPostAndMorePosts(slug, isEnabled);
-
-  if (!post || !post.title) {
-    return { notFound: true };
-  }
 
   return (
     <div className="container mx-auto px-5">
@@ -47,9 +44,7 @@ export default async function PostPage({
           )}
         </div>
         <div className="mb-8 sm:mx-0 md:mb-16">
-          {post.coverImage && (
-            <CoverImage title={post.title} url={post.coverImage.url} />
-          )}
+          <CoverImage title={post.title} url={post.coverImage.url} />
         </div>
         <div className="mx-auto max-w-2xl">
           <div className="mb-6 block md:hidden">
