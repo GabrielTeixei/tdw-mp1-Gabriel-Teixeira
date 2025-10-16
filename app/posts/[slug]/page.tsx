@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { draftMode } from "next/headers";
+import Link from 'next/link';
+import { draftMode } from 'next/headers';
 
-import MoreStories from "../../more-stories";
-import Avatar from "../../avatar";
-import Date from "../../date";
-import CoverImage from "../../cover-image";
+import MoreStories from '../../more-stories';
+import Avatar from '../../avatar';
+import Date from '../../date';
+import CoverImage from '../../cover-image';
 
-import { Markdown } from "@/lib/markdown";
-import { getAllPosts, getPostAndMorePosts } from "@/lib/api";
+import { Markdown } from '@/lib/markdown';
+import { getAllPosts, getPostAndMorePosts } from '@/lib/api';
 
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false);
@@ -48,7 +48,7 @@ export default async function PostPage({
 
       <article>
         <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
-          {post.title || "Untitled"}
+          {post.title || 'Untitled'}
         </h1>
 
         <div className="hidden md:mb-12 md:block">
@@ -94,9 +94,7 @@ export default async function PostPage({
 
       <hr className="border-accent-2 mt-28 mb-24" />
 
-      {morePosts && morePosts.length > 0 && (
-        <MoreStories morePosts={morePosts} />
-      )}
+      {morePosts && morePosts.length > 0 && <MoreStories morePosts={morePosts} />}
     </div>
   );
 }
