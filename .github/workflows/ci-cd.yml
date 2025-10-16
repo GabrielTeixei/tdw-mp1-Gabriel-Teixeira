@@ -10,6 +10,9 @@ on:
   schedule:
     - cron: "0 0 * * *" 
 
+env:
+  GITHUB_TOKEN_FOR_CONTENTFUL: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
+
 jobs:
   ci-cd:
     name: Full CI/CD Pipeline
