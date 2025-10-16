@@ -34,5 +34,5 @@ module.exports = {
       { varsIgnorePattern: "EXAMPLE_PATH" },
     ],
   },
-  ignorePatterns: ["out/", "node_modules/"], 
+  ignorePatterns: ["out/", "node_modules/"],
 };
