@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Aveiro",
+			"country": {
+				"code": "PT",
+				"name": "Portugal"
+			},
+			"subdivision": {
+				"code": "01",
+				"name": "Aveiro"
+			},
+			"timezone": "Europe/Lisbon",
+			"latitude": 40.6501,
+			"longitude": -8.6502,
+			"postalCode": "3800-254"
+		},
+		"timestamp": 1760612675881
+	}
+}
