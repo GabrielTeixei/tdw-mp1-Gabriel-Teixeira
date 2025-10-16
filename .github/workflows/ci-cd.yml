@@ -8,7 +8,7 @@ on:
   repository_dispatch:
     types: [contentful-update]
   schedule:
-    - cron: "0 0 * * *" # todos os dias à meia-noite UTC
+    - cron: "0 0 * * *" 
 
 jobs:
   ci-cd:
