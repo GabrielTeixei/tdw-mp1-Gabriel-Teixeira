@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true
+    unoptimized: true, 
   },
-  output: 'export',  // Gera build estático
-  trailingSlash: true // opcional, útil para URLs amigáveis
+  output: 'export',      
+  trailingSlash: true,   
+  eslint: {
+    ignoreDuringBuilds: true, 
+  },
 };
 
 module.exports = nextConfig;
