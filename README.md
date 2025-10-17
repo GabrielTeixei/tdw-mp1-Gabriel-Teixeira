@@ -4,9 +4,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e39a2055-a018-4963-a4ba-d4402eb1fd7e/deploy-status)](https://app.netlify.com/projects/tdw-mp1-gabriel-teixeira/deploys)
 
-[![Coverage Status](https://coveralls.io/repos/github/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/badge.svg?branch=main)](https://coveralls.io/github/GabrielTeixei/tdw-mp1-Gabriel-Teixeira?branch=main)
-
-
 ## Formatação de Código
 
 Para manter o código limpo e consistente, usamos **Prettier**.  
