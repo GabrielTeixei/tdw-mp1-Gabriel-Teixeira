@@ -3,31 +3,29 @@ name: Generate Coverage Badge
 on:
   push:
     branches:
-      - "**"  
-  pull_request:
-    branches:
-      - "**"  
+      - "**"
 
 jobs:
   coverage:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - run: npm ci
+      - run: npm test -- --coverage --coverageReporters=json-summary
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests with coverage
-        run: npm test -- --coverage --coverageReporters=json-summary
-
-      - name: Create coverage badge
-        uses: cicirello/jest-coverage-badges-action@v2
-        with:
-          branches: ${{ github.ref_name }}
+      - name: Generate coverage badge
+        run: |
+          COVERAGE=$(node -p "require('./coverage/coverage-summary.json').total.lines.pct")
+          COLOR="red"
+          if (( $(echo "$COVERAGE >= 90" | bc -l) )); then COLOR="brightgreen"; fi
+          if (( $(echo "$COVERAGE >= 80" | bc -l) && $(echo "$COVERAGE < 90" | bc -l) )); then COLOR="yellow"; fi
+          echo "{
+            \"schemaVersion\": 1,
+            \"label\": \"coverage\",
+            \"message\": \"$COVERAGE%\",
+            \"color\": \"$COLOR\"
+          }" > badges/coverage.json

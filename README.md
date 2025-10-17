@@ -4,6 +4,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e39a2055-a018-4963-a4ba-d4402eb1fd7e/deploy-status)](https://app.netlify.com/projects/tdw-mp1-gabriel-teixeira/deploys)
 
+![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/BRANCH/badges/coverage.json)
+
+
 ## Formatação de Código
 
 Para manter o código limpo e consistente, usamos **Prettier**.  
