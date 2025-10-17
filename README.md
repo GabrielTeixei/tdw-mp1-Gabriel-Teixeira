@@ -2,12 +2,12 @@
 
 ## Status do Projeto
 
-[![CI/CD Pipeline](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml)  
+[![CI/CD Pipeline](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/ci-cd.yml)
+![Status do Build](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/test.yml/badge.svg?branch=main)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e39a2055-a018-4963-a4ba-d4402eb1fd7e/deploy-status)](https://tdw-mp1-gabriel-teixeira.tdw-mctw.pt/)
 
-**Deploy:** [https://tdw-mp1-gabriel-teixeira.tdw-mctw.pt/](https://tdw-mp1-gabriel-teixeira.tdw-mctw.pt/)
+**Deploy:** [Link do projeto](https://tdw-mp1-gabriel-teixeira.tdw-mctw.pt/)
 
-![Status do Build](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/test.yml/badge.svg?branch=docs)
 
 ---
 
