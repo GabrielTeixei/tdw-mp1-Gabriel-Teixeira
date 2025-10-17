@@ -8,7 +8,7 @@ on:
   repository_dispatch:
     types: [contentful-update]
   schedule:
-    - cron: "0 0 * * *" 
+    -  cron: "*/5 * * * *"  
 
 env:
   GITHUB_TOKEN_FOR_CONTENTFUL: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
