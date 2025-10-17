@@ -4,7 +4,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e39a2055-a018-4963-a4ba-d4402eb1fd7e/deploy-status)](https://app.netlify.com/projects/tdw-mp1-gabriel-teixeira/deploys)
 
-![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/BRANCH/badges/coverage.json)
+[![Coverage Status](https://coveralls.io/repos/github/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/badge.svg?branch=main)](https://coveralls.io/github/GabrielTeixei/tdw-mp1-Gabriel-Teixeira?branch=main)
 
 
 ## Formatação de Código

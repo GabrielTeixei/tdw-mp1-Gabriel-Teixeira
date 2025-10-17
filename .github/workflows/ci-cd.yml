@@ -3,12 +3,12 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - "*"
+      - "*"  # roda em qualquer branch
   workflow_dispatch:
   repository_dispatch:
     types: [contentful-update]
   schedule:
-    - cron: "0 0 * * *" 
+    - cron: "0 0 * * *"
 
 env:
   GITHUB_TOKEN_FOR_CONTENTFUL: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
@@ -17,6 +17,7 @@ jobs:
   ci-cd:
     name: Full CI/CD Pipeline
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -46,6 +47,9 @@ jobs:
 
       - name: Run Tests
         run: npm test
+
+      - name: Enviar coverage para Coveralls
+        run: cat coverage/lcov.info | npx coveralls
 
       - name: Build Next.js
         env:
