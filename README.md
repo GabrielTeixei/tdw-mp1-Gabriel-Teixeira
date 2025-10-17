@@ -7,6 +7,8 @@
 
 **Deploy:** [https://tdw-mp1-gabriel-teixeira.tdw-mctw.pt/](https://tdw-mp1-gabriel-teixeira.tdw-mctw.pt/)
 
+![Status do Build](https://github.com/GabrielTeixei/tdw-mp1-Gabriel-Teixeira/actions/workflows/test.yml/badge.svg?branch=main)
+
 ---
 
 ## Sobre o Projeto
