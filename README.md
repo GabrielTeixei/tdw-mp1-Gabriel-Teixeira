@@ -56,7 +56,17 @@ All unit, integration, and snapshot tests can be run with:
 ```bash
 npm test
 ```
+# Using Husky for Pre-commit
 
+To ensure that no commit breaks code quality or tests, we use **Husky** with pre-commit hooks.
+
+## Add the pre-commit hook
+
+Run the following command in the project terminal:
+
+```bash
+npx husky add .husky/pre-commit "npm run lint && npm run format -- --check && npm test"
+```
 ## Run Coverage
 
 ![Coverage Screenshot](readme_assets/coverage.png)
