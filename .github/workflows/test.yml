@@ -2,12 +2,11 @@ name: Testes
 
 on:
   push:
-    branches:
-      - docs
+    branches: 
+      - '*'
   pull_request:
-    branches:
-      - docs
-
+    branches: 
+     - '*'
 jobs:
   test:
     runs-on: ubuntu-latest
