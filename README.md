@@ -52,6 +52,7 @@ Blog estático desenvolvido com **Next.js** e **Contentful CMS**, com foco em:
 ## Estrutura do Projeto
 
 ```bash
+<<<<<<< HEAD
 tdw-mp1-Gabriel-Teixeira/
 ├── components/       # Componentes reutilizáveis (UI)
 ├── pages/            # Páginas estáticas geradas pelo Next.js
@@ -61,3 +62,19 @@ tdw-mp1-Gabriel-Teixeira/
 ├── .github/workflows # Pipelines CI/CD
 ├── package.json      # Dependências e scripts
 └── README.md
+=======
+.
+├── app/                 # Componentes e páginas do Next.js
+├── __tests__/           # Testes unitários, de integração e snapshots
+├── lib/                 # Conexão e API com Contentful
+├── .github/workflows/   # CI/CD GitHub Actions
+├── .husky/              # Hooks de git
+├── package.json
+├── README.md
+└── tsconfig.json
+
+## Licença
+
+MIT License © 2025 Gabriel Teixeira
+Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+>>>>>>> Adiciona licença MIT e atualiza README
