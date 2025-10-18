@@ -83,7 +83,6 @@ xdg-open coverage/lcov-report/index.html
 
 ## Licença
 
-MIT License  
-© 2025 Gabriel Teixeira  
-See the [LICENSE](LICENSE) file for more details.
-
+MIT License © 2025 Gabriel Teixeira
+Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+>>>>>>> Adiciona licença MIT e atualiza README
