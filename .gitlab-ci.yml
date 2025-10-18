@@ -1,0 +1,57 @@
+image: node:20
+
+stages:
+  - install
+  - lint
+  - test
+  - build
+  - deploy
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  script:
+    - npm ci
+  artifacts:
+    paths:
+      - node_modules/
+
+lint:
+  stage: lint
+  script:
+    - npm run lint
+    - npm run format -- --check
+  dependencies:
+    - install_dependencies
+
+test:
+  stage: test
+  script:
+    - npm test
+  dependencies:
+    - install_dependencies
+
+build:
+  stage: build
+  script:
+    - npm run build
+  variables:
+    CONTENTFUL_SPACE_ID: $CONTENTFUL_SPACE_ID
+    CONTENTFUL_ACCESS_TOKEN: $CONTENTFUL_ACCESS_TOKEN
+    CONTENTFUL_PREVIEW_ACCESS_TOKEN: $CONTENTFUL_PREVIEW_ACCESS_TOKEN
+    CONTENTFUL_PREVIEW_SECRET: $CONTENTFUL_PREVIEW_SECRET
+    CONTENTFUL_REVALIDATE_SECRET: $CONTENTFUL_REVALIDATE_SECRET
+  dependencies:
+    - install_dependencies
+
+deploy:
+  stage: deploy
+  script:
+    - npx netlify-cli deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod
+  only:
+    - main
+    - master
